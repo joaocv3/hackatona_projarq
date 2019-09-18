@@ -2,7 +2,7 @@
 
 >Authors: Henrique K. - João C. - João S.
 
->Architectural pattern chosen: MVC
+>Chosen architectural pattern: MVC
 
 ## Funcional requirements
 
@@ -27,13 +27,19 @@
   
 ## Non-functional requirements
 
-Maintainability
-  L modularity
-  L reusability
-  L analyzability
-  L changeability
-  L modificability
-  L testability
+**Maintainability**
+
+- modularity
+  
+- reusability
+  
+- analyzability
+  
+- changeability
+  
+- modificability
+  
+- testability
 
 ## Technologies
 
