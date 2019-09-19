@@ -1,5 +1,7 @@
 # HACKATHON SYSTEM
 
+>https://hackatona-projarq.herokuapp.com/
+
 >Authors: Henrique K. - João C. - João S.
 
 >Chosen architectural pattern: MVC
@@ -57,3 +59,8 @@
 | Appraiser | name <br> **pk_unique_key** | Subscribe <br> Unsubscribe |
 | Evaluation | working_software <br> process <br> pitch <br> innovation <br> team_formation <br> **pk_unique_key** <br> **fk_team** <br> **fk_appraiser** | None |
 | College_course | Name <br> **pk_unique_key** | Subscribe <br> Unsubscribe |
+
+## Deploy
+
+The project can be manually deployed on: 
+https://dashboard.heroku.com/apps/hackatona-projarq/deploy/github
