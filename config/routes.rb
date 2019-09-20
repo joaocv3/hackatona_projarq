@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :appraisals
   resources :appraisers
   resources :teams
   resources :courses

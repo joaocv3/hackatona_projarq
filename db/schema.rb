@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_233952) do
+ActiveRecord::Schema.define(version: 2019_09_20_004355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appraisals", force: :cascade do |t|
+    t.string "name"
+    t.bigint "team_id"
+    t.bigint "appraiser_id"
+    t.integer "working_software"
+    t.integer "process"
+    t.integer "pitch"
+    t.integer "inovation"
+    t.integer "team_formation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["appraiser_id"], name: "index_appraisals_on_appraiser_id"
+    t.index ["team_id"], name: "index_appraisals_on_team_id"
+  end
 
   create_table "appraisers", force: :cascade do |t|
     t.string "name"
@@ -33,4 +48,6 @@ ActiveRecord::Schema.define(version: 2019_09_19_233952) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "appraisals", "appraisers"
+  add_foreign_key "appraisals", "teams"
 end

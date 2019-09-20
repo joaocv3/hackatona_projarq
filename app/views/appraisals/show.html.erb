@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @appraisal.name %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @appraisal.team %>
+</p>
+
+<p>
+  <strong>Appraiser:</strong>
+  <%= @appraisal.appraiser %>
+</p>
+
+<p>
+  <strong>Working software:</strong>
+  <%= @appraisal.working_software %>
+</p>
+
+<p>
+  <strong>Process:</strong>
+  <%= @appraisal.process %>
+</p>
+
+<p>
+  <strong>Pitch:</strong>
+  <%= @appraisal.pitch %>
+</p>
+
+<p>
+  <strong>Inovation:</strong>
+  <%= @appraisal.inovation %>
+</p>
+
+<p>
+  <strong>Team formation:</strong>
+  <%= @appraisal.team_formation %>
+</p>
+
+<%= link_to 'Edit', edit_appraisal_path(@appraisal) %> |
+<%= link_to 'Back', appraisals_path %>
