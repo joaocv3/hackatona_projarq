@@ -90,23 +90,76 @@ For using this application locally, you will need to have installed PostgreSQL a
 $ brew install rbenv ruby-build
 
 # Ruby 2.5.0
-$rbenv install 2.5.0
+$ rbenv install 2.5.0
 
 # Rails
 $gem install rails --no-document
 
 # Dependencies (project path)
-$bundle install
+$ bundle install
 
 # PostgreSQL
-$brew install postgresql
+$ brew install postgresql
 
 # Migrate databases
-$rails db:migrate
+$ rails db:migrate
+    If this command fails:
+        $ rake db:drop db:setup db:migrate
 
 # Run PostgreSQL as daemon
-$pg_ctl -D /usr/local/var/postgres start
+$ pg_ctl -D /usr/local/var/postgres start
 
 # Start server
-$rails server
+$ rails server
+```
+
+**Server side on Linux**
+
+PostgreSQL
+```
+sudo apt install postgresql-11 libpq-dev
+```
+
+Installing with ```rbenv``` is a simple two step process. First you install ```rbenv```, and then ```ruby-build```
+```
+cd
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+```
+In the project root:
+```
+rbenv install 2.5.0
+ruby -v
+```
+
+Install Bundler
+```
+gem install bundler
+rbenv rehash
+```
+
+Install project dependencies
+```
+bundle install
+rbenv rehash
+```
+
+Migrate databases
+```
+rails db:migrate
+```
+If migrate fails:
+```
+rake db:drop db:setup db:migrate
+```
+
+Start server
+```
+rails server
 ```
