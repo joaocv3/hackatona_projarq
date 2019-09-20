@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Appraisals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Team</th>
+      <th>Appraiser</th>
+      <th>Working software</th>
+      <th>Process</th>
+      <th>Pitch</th>
+      <th>Inovation</th>
+      <th>Team formation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appraisals.each do |appraisal| %>
+      <tr>
+        <td><%= appraisal.name %></td>
+        <td><%= appraisal.team %></td>
+        <td><%= appraisal.appraiser %></td>
+        <td><%= appraisal.working_software %></td>
+        <td><%= appraisal.process %></td>
+        <td><%= appraisal.pitch %></td>
+        <td><%= appraisal.inovation %></td>
+        <td><%= appraisal.team_formation %></td>
+        <td><%= link_to 'Show', appraisal %></td>
+        <td><%= link_to 'Edit', edit_appraisal_path(appraisal) %></td>
+        <td><%= link_to 'Destroy', appraisal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Appraisal', new_appraisal_path %>
