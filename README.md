@@ -95,6 +95,9 @@ $rbenv install 2.5.0
 # Rails
 $gem install rails --no-document
 
+# Dependencies (project path)
+$bundle install
+
 # PostgreSQL
 $brew install postgresql
 
