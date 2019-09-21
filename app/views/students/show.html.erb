@@ -7,12 +7,12 @@
 
 <p>
   <strong>Team:</strong>
-  <%= @student.team %>
+  <%= @student.team.name %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @student.course %>
+  <%= @student.course.name %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
