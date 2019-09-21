@@ -3,6 +3,7 @@ class Appraisal < ApplicationRecord
   belongs_to :appraiser
 
   validate :appraisal_amount
+  validate :has_already_voted
 
   private
 
@@ -21,6 +22,12 @@ class Appraisal < ApplicationRecord
     end
     if !self.team_formation or self.team_formation < 0 or self.team_formation > 5
       errors.add(:team_formation, "has invalid amount!")
+    end
+  end
+
+  def has_already_voted
+    if Appraisal.find_by(Appraiser == self.appraiser, Team == self.team)
+      errors.add(:appraiser, "has already voted on current team!")
     end
   end
 
