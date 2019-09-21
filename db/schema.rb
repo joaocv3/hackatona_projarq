@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_005808) do
   enable_extension "plpgsql"
 
   create_table "appraisals", force: :cascade do |t|
-    t.string "name"
     t.bigint "team_id"
     t.bigint "appraiser_id"
     t.integer "working_software"

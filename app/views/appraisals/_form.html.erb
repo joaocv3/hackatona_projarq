@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
     <%= form.label :team_id %>
-    <%= form.text_field :team_id %>
+    <%= form.collection_select :team_id, Team.all, :id, :name, {:include_blank => true} %>
   </div>
 
   <div class="field">
     <%= form.label :appraiser_id %>
-    <%= form.text_field :appraiser_id %>
+    <%= form.collection_select :appraiser_id, Appraiser.all, :id, :name, {:include_blank => true} %>
   </div>
 
   <div class="field">
