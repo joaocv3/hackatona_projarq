@@ -9,7 +9,7 @@ class Student < ApplicationRecord
 
   def team_size
     if Student.where(team: team).size == MAX
-      errors.add(:team, "Team is full!")
+      errors.add(:team, "is full!")
     end
   end
 
