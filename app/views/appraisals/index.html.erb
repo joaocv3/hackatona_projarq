@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
       <th>Team</th>
       <th>Appraiser</th>
       <th>Working software</th>
@@ -20,9 +19,8 @@
   <tbody>
     <% @appraisals.each do |appraisal| %>
       <tr>
-        <td><%= appraisal.name %></td>
-        <td><%= appraisal.team %></td>
-        <td><%= appraisal.appraiser %></td>
+        <td><%= appraisal.team.name %></td>
+        <td><%= appraisal.appraiser.name %></td>
         <td><%= appraisal.working_software %></td>
         <td><%= appraisal.process %></td>
         <td><%= appraisal.pitch %></td>
