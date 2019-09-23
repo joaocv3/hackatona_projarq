@@ -10,12 +10,12 @@
 
     <nav>
       <div class="nav-wrapper">
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="appraisals">Avaliações</a></li>
-          <li><a href="appraisers">Avaliadores</a></li>
-          <li><a href="teams">Times</a></li>
-          <li><a href="students">Alunos</a></li>
-          <li><a href="courses">Cursos</a></li>
+        <ul>
+          <li><%= link_to "Avaliações", {controller: "appraisals", action: "index"} %></li>
+          <li><%= link_to "Avaliadores", {controller: "appraisers", action: "index"} %></li>
+          <li><%= link_to "Times", {controller: "teams", action: "index"} %></li>
+          <li><%= link_to "Alunos", {controller: "students", action: "index"} %></li>
+          <li><%= link_to "Cursos", {controller: "courses", action: "index"} %></li>
        </ul>
      </div>
    </nav>
