@@ -26,9 +26,8 @@ class Appraisal < ApplicationRecord
   end
 
   def has_already_voted
-    if Appraisal.find_by(Appraiser == self.appraiser, Team == self.team)
+    if appraiser.appraisals.map(&:team).include?(team)
       errors.add(:appraiser, "has already voted on current team!")
     end
   end
-
 end
