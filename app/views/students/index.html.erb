@@ -2,7 +2,7 @@
 
 <h1>Alunos</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,9 +18,10 @@
         <td><%= student.name %></td>
         <td><%= student.team.name %></td>
         <td><%= student.course.name %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', student %> <%= link_to 'Edit', edit_student_path(student) %> 
+          <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
