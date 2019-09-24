@@ -26,6 +26,8 @@ class Appraisal < ApplicationRecord
   end
 
   def has_already_voted
+    return unless appraiser
+
     if appraiser.appraisals.map(&:team).include?(team)
       errors.add(:appraiser, "has already voted on current team!")
     end
