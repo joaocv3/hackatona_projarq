@@ -2,32 +2,30 @@ class Appraisal < ApplicationRecord
   belongs_to :team
   belongs_to :appraiser
 
+  attr_accessor :working_software, :process, :pitch, :inovation, :team_formation
+
   validate :appraisal_amount
-  validate :has_already_voted
+  validate :has_already_voted, if: :appraiser_present?
+
+  validates_presence_of :working_software, :process, :pitch, :inovation, :team_formation
 
   private
 
+  def appraiser_present?
+    appraiser.present?
+  end
+
   def appraisal_amount
-    if !self.working_software or self.working_software < 0 or self.working_software > 5
-      errors.add(:working_software, "has invalid amount!")
-    end
-    if !self.process or self.process < 0 or self.process > 5
-      errors.add(:process, "has invalid amount!")
-    end
-    if !self.pitch or self.pitch < 0 or self.pitch > 5
-      errors.add(:pitch, "has invalid amount!")
-    end
-    if !self.inovation or self.inovation < 0 or self.inovation > 5
-      errors.add(:inovation, "has invalid amount!")
-    end
-    if !self.team_formation or self.team_formation < 0 or self.team_formation > 5
-      errors.add(:team_formation, "has invalid amount!")
+    [:working_software, :process, :pitch, :inovation, :team_formation].each do |attribute_to_validate|
+      if send(attribute_to_validate).present?
+        if send(attribute_to_validate).to_i < 0 or send(attribute_to_validate).to_i > 5
+          errors.add(attribute_to_validate, "has invalid amount!")
+        end
+      end
     end
   end
 
   def has_already_voted
-    return unless appraiser
-
     if appraiser.appraisals.map(&:team).include?(team)
       errors.add(:appraiser, "has already voted on current team!")
     end

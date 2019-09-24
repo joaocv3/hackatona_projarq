@@ -2,10 +2,16 @@ class Student < ApplicationRecord
   belongs_to :team
   belongs_to :course
 
-  validate :team_size
-  validate :team_with_different_courses
+
+  validates_presence_of :name
+  validate :team_size, if: :team_present?
+  validate :team_with_different_courses, if: :team_present?
 
   private
+
+  def team_present?
+    team.present?
+  end
 
   def team_size
     if team.students.size == Constants::MAX_STUDENTS_PER_TEAM
