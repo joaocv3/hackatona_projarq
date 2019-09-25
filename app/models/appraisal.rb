@@ -2,8 +2,6 @@ class Appraisal < ApplicationRecord
   belongs_to :team
   belongs_to :appraiser
 
-  attr_accessor :working_software, :process, :pitch, :inovation, :team_formation
-
   validate :appraisal_amount
   validate :has_already_voted, if: :appraiser_present?
 

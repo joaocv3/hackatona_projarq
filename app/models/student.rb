@@ -2,7 +2,6 @@ class Student < ApplicationRecord
   belongs_to :team, optional: true
   belongs_to :course
 
-
   validates_presence_of :name
 
   private

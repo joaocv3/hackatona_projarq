@@ -7,6 +7,10 @@
     <tr>
       <th>Name</th>
       <th>Membros</th>
+      <th>Número de Avaliações</th>
+      <th>Avaliado por todos os avaliadores?</th>
+      <th>Avaliadores que ainda não avaliaram</th>
+      <th>Nota</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +19,11 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= team.name %></td>
-        <td><%= team.students.map{|student| "#{student.name} - #{student.course.name}"}.join(", ") %></td>
+        <td><%= team.list_students %></td>
+        <td><%= team.times_appraised %></td>
+        <td><%= team.appraised_by_all_appraisers? ? "Sim" : "Não" %></td>
+        <td><%= team.list_missing_appraisal_by %></td>
+        <td><%= team.appraisal_points %></td>
         <td>
           <%= link_to 'Show', team %>
           <%= link_to 'Edit', edit_team_path(team) %>
