@@ -6,7 +6,7 @@
 
 >Chosen architectural pattern: MVC
 
-This project is emulating a simple CMS over the hackathon context made in ruby on rails.
+This project is emulating a simple CMS over the hackathon context made in Ruby on Rails.
 
 #
 
@@ -24,6 +24,9 @@ This project is emulating a simple CMS over the hackathon context made in ruby o
   * Include member
   * Exclude member
 
+* Appraisers
+  * Evaluate a team (with the evaluation form)
+  
 * Generate evaluation form
   * Working software [ 0 - 5 ]
   * Process [ 0 - 5 ]
@@ -54,7 +57,7 @@ This project is emulating a simple CMS over the hackathon context made in ruby o
 ## Technologies
 
 * Ruby on Rails (Server-side)
-* Material-UI (Client-side)
+* Bootstrap (Client-side)
 * PostgreSQL (Database)
 * Heroku (PAAS)
 
