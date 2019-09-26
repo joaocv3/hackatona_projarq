@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Membros</th>
+      <th>Cursos</th>
       <th>Número de Avaliações</th>
       <th>Avaliado por todos os avaliadores?</th>
       <th>Avaliadores que ainda não avaliaram</th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= team.name %></td>
         <td><%= team.list_students %></td>
+        <td><%= team.list_courses %></td>
         <td><%= team.times_appraised %></td>
         <td><%= team.appraised_by_all_appraisers? ? "Sim" : "Não" %></td>
         <td><%= team.list_missing_appraisal_by %></td>

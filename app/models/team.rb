@@ -36,7 +36,11 @@ class Team < ApplicationRecord
   end
 
   def list_students
-    students.map{|student| "#{student.name} - #{student.course.name}"}.join(", ")
+    students.map(&:name).join(", ")
+  end
+
+  def list_courses
+    students.map{|student| student.course.name }.uniq.join(", ")
   end
 
   def appraised_by_all_appraisers?
