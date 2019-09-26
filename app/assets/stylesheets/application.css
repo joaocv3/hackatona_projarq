@@ -19,7 +19,7 @@
    margin: 0;
    padding: 0;
    overflow: hidden;
-   background-color: #333333;
+   background-color: #124f89;
  }
 
  li {
@@ -27,7 +27,7 @@
    color: white;
  }
 
- li a {
+ li {
    display: block;
    color: white;
    text-align: center;
@@ -35,16 +35,29 @@
    text-decoration: none;
  }
 
- li a:hover {
-   background-color: #111111;
+ li > a:hover {
+   background-color: #3b5d7d;
    color: white;
+   text-decoration: none;
  }
 
- li a:visited {
-   background-color: #111111;
+ li > a:visited  {
+   background-color: #3b5d7d;
    color: white;
+   text-decoration: none;
  }
 
  body {
     padding: 2%;
  }
+
+  body > a,  body > a:hover,  body > a:visited, td > a,  td > a:hover,  td > a:visited  {
+   font-size:12px;
+   font-weight: bold;
+   border: 1px #989fab solid;
+   padding: 5px;
+   background: #e9eef7;
+   border-radius: 5px;
+   color:#666;
+   text-decoration: none;
+  }

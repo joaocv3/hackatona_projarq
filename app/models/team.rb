@@ -24,7 +24,7 @@ class Team < ApplicationRecord
   end
 
   def self.team_missing_different_courses?(team)
-    team.students.map(&:course).uniq.size == ( ::Constants::DIFFERENT_COURSES_PER_TEAM  - 1 )
+    team.students.map(&:course).uniq.size == ::Constants::DIFFERENT_COURSES_PER_TEAM
   end
 
   def self.new_student_course_already_in_team?(team, student)
