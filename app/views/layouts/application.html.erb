@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HackatonaProjarq</title>
+    <title>Hackathon</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <div class="text-center">
+      <h1 class="display-3">Hackathon of the guris</h1>
+    </div>
+
     <nav>
-      <div class="nav-wrapper">
+      <div>
         <ul>
           <li><%= link_to "Avaliações", {controller: "appraisals", action: "index"} %></li>
           <li><%= link_to "Avaliadores", {controller: "appraisers", action: "index"} %></li>
