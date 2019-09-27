@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :teams
   resources :courses
 
-  root to: "appraisals#index"
+  root to: "roles#index"
 end

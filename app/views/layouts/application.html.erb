@@ -20,11 +20,13 @@
     <nav>
       <div>
         <ul>
-          <li><%= link_to "Avaliações", {controller: "appraisals", action: "index"} %></li>
-          <li><%= link_to "Avaliadores", {controller: "appraisers", action: "index"} %></li>
+          <% if params["role"] == "appraiser" %>
+            <li><%= link_to "Avaliadores", {controller: "appraisers", action: "index"}  %></li>
+            <li><%= link_to "Avaliações", {controller: "appraisals", action: "index"} %></li>
+            <li><%= link_to "Cursos", {controller: "courses", action: "index"} %></li>
+          <% end %>
           <li><%= link_to "Times", {controller: "teams", action: "index"} %></li>
           <li><%= link_to "Alunos", {controller: "students", action: "index"} %></li>
-          <li><%= link_to "Cursos", {controller: "courses", action: "index"} %></li>
        </ul>
      </div>
    </nav>

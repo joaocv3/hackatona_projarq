@@ -47,10 +47,6 @@
    text-decoration: none;
  }
 
- body {
-    padding: 2%;
- }
-
   body > a,  body > a:hover,  body > a:visited, td > a,  td > a:hover,  td > a:visited  {
    font-size:12px;
    font-weight: bold;
@@ -60,4 +56,12 @@
    border-radius: 5px;
    color:#666;
    text-decoration: none;
+  }
+
+  .table {
+    border: 2px #989fab solid;
+  }
+
+  .roles {
+    padding: 5%;
   }
