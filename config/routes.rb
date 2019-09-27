@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :courses
 
   root to: "roles#index"
+  get 'set_student', to: 'roles#set_student'
+  get 'set_appraiser', to: 'roles#set_appraiser'
+  
 end

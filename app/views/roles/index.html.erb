@@ -1,5 +1,5 @@
 
 <div class="roles">
-    <%= link_to "Continuar como avaliador",  controller: "appraisals", action: "index", :role => "appraiser" %>
-    <%= link_to "Continuar como aluno", controller: "teams", action: "index", :role => "student" %>
+    <%= link_to "Continuar como avaliador",  controller: "roles", action: "set_appraiser" %>
+    <%= link_to "Continuar como aluno", controller: "roles", action: "set_student" %> 
 </div>
