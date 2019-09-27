@@ -7,7 +7,7 @@
 
 <p>
   <strong>Time:</strong>
-  <%= @student.team.name %>
+  <%= @student.team.present? ? @student.team.name : "Time ainda não escolhido" %>
 </p>
 
 <p>
@@ -15,5 +15,6 @@
   <%= @student.course.name %>
 </p>
 
+<%= link_to 'Sugerir time', student_suggest_team_url(@student) %> |
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

@@ -1,0 +1,14 @@
+<h1>Sugerir time</h1>
+
+
+<%= form_with(model: @student, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :team_id %>
+    <%= form.collection_select :team_id, Team.suggest_for(@student), :id, :name, {:include_blank => true} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

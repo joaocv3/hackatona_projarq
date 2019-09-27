@@ -5,10 +5,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
       <th>Time</th>
       <th>Curso</th>
-      <th colspan="3"></th>
+      <th colspan="3">Ações</th>
     </tr>
   </thead>
 
@@ -16,11 +16,13 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
-        <td><%= student.team.name %></td>
+        <td><%= student.team&.name %></td>
         <td><%= student.course.name %></td>
         <td>
-          <%= link_to 'Show', student %> <%= link_to 'Edit', edit_student_path(student) %> 
-          <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', student %>  
+          <%= link_to 'Edit', edit_student_path(student) %> 
+          <%= link_to 'Sugerir time', student_suggest_team_url(student) %> 
+          <%= link_to 'Remover', student, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
@@ -28,5 +30,4 @@
 </table>
 
 <br>
-
-<%= link_to 'Novo Aluno', new_student_path %>
+  <%= link_to 'Novo Aluno', new_student_path %>
