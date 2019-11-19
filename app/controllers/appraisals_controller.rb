@@ -28,6 +28,8 @@ class AppraisalsController < ApplicationController
 
     respond_to do |format|
       if @appraisal.save
+        @appraisal.mark_students_with_new_appraisal
+
         format.html { redirect_to @appraisal, notice: 'Appraisal was successfully created.' }
         format.json { render :show, status: :created, location: @appraisal }
       else

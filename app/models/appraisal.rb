@@ -7,6 +7,12 @@ class Appraisal < ApplicationRecord
 
   validates_presence_of :working_software, :process, :pitch, :inovation, :team_formation
 
+  def mark_students_with_new_appraisal
+    team.students.each do |student|
+      student.update(new_appraisal: true)
+    end
+  end
+
   private
 
   def appraiser_present?

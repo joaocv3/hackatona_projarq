@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   root to: "roles#index"
   get 'set_student', to: 'roles#set_student'
+  get 'set_student_with_new_appraisal', to: 'roles#set_student_with_new_appraisal'
   get 'set_appraiser', to: 'roles#set_appraiser'
   
 end
