@@ -11,6 +11,14 @@ class Team < ApplicationRecord
       .reverse
   end
 
+  def self.all_appraised?
+    all_appraisers = Appraiser.all
+
+    Team
+      .all
+      .all?{|t| ( all_appraisers - t.appraisals.map(&:appraiser)).empty? }
+  end
+
   def self.suggest_for(student)
     Team
       .all

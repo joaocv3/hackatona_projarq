@@ -14,6 +14,10 @@ class AppraisalsController < ApplicationController
 
   # GET /appraisals/new
   def new
+    if Team.all_appraised?
+      redirect_to appraisals_url, alert: "Times já foram avaliados por todos avaliadores"
+    end
+
     @appraisal = Appraisal.new
   end
 
