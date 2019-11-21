@@ -19,6 +19,13 @@ class Team < ApplicationRecord
       .all?{|t| ( all_appraisers - t.appraisals.map(&:appraiser)).empty? }
   end
 
+  def mark_students_as_presented
+    students
+      .each do | student |
+        student.update(presented: true)
+      end
+  end
+
   def self.suggest_for(student)
     Team
       .all

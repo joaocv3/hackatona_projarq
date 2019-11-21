@@ -8,6 +8,7 @@
       <th>Nome</th>
       <th>Time</th>
       <th>Curso</th>
+      <th>Apresentou?</th>
       <th colspan="6">Ações</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= student.name %></td>
         <td><%= student.team&.name %></td>
         <td><%= student.course.name %></td>
+        <td><%= student.presented ? "Sim" : "Não" %></td>
         <td>
           <%= link_to 'Show', student %>  
           <%= link_to 'Edit', edit_student_path(student) %> 

@@ -12,6 +12,7 @@
       <th width="20">Avaliado por todos os avaliadores?</th>
       <th width="40">Avaliadores que ainda não avaliaram</th>
       <th>Nota</th>
+      <th>Marcar que alunos apresentaram</th>
       <th colspan="5"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= team.appraised_by_all_appraisers? ? "Sim" : "Não" %></td>
         <td><%= team.list_missing_appraisal_by %></td>
         <td><%= team.appraisal_points %></td>
+        <td><%= link_to 'Alunos apresentaram', { controller: "teams", action: "mark_students_as_presented", team: team }  %></td>
         <td>
           <%= link_to 'Show', team %>
           <%= link_to 'Edit', edit_team_path(team) %>
